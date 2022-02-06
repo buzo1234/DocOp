@@ -16,7 +16,7 @@ import {
 import { firebase } from '../firebase.js';
 import { useRouter } from 'next/router';
 
-function clinicregister() {
+function Clinicregister() {
   const [name, setName] = useState('');
   const [cnumber, setCnumber] = useState('');
   const [address, setAddress] = useState('');
@@ -271,4 +271,4 @@ function clinicregister() {
   );
 }
 
-export default clinicregister;
+export default Clinicregister;

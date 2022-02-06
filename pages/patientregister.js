@@ -8,7 +8,7 @@ import { db, storage } from '../firebase';
 import { addDoc, collection, serverTimestamp } from '@firebase/firestore';
 import { connectStorageEmulator } from 'firebase/storage';
 
-function patientregister() {
+function Patientregister() {
   const [name, setName] = useState('');
   const [cnumber, setCnumber] = useState(0);
   const [address, setAddress] = useState('');
@@ -161,4 +161,4 @@ function patientregister() {
   );
 }
 
-export default patientregister;
+export default Patientregister;
