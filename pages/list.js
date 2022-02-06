@@ -47,7 +47,7 @@ function List() {
           className='font-semi-bold flex bg-backg py-3 px-4  text-white placeholder-white placeholder-opacity-100 outline-none'
           onKeyPress={(e) => {
             let flag = 0;
-            if ((e.code === 'Enter' || e.code === 13) && value !== '') {
+            if ((e.key === 'Enter' || e.key === 13) && value !== '') {
               flag = 1;
               let item = value;
               setList((arr) => [...arr, item]);
