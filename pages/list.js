@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function list() {
+function List() {
   const [list, setList] = useState(['']);
   const [value, setValue] = useState('');
 
@@ -70,4 +70,4 @@ function list() {
   );
 }
 
-export default list;
+export default List;
