@@ -26,7 +26,10 @@ function List() {
     return (
       <div className='flex flex-wrap items-center justify-center '>
         {list.map((e) => (
-          <div className='my-3 mx-3 flex items-center rounded-lg bg-blue-200 px-3 py-1 text-center'>
+          <div
+            className='my-3 mx-3 flex items-center rounded-lg bg-blue-200 px-3 py-1 text-center'
+            key={e}
+          >
             {e}{' '}
             <span
               className='mx-2 cursor-pointer rounded-md bg-red-500 p-3 text-center font-black text-black '

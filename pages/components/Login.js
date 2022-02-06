@@ -24,7 +24,7 @@ function Login() {
         </button>
 
         <p className='text-md'>
-          Don't have an account?
+          Don&apos;t have an account?
           <span className='cursor-pointer px-3 font-bold text-red-600 underline'>
             Register Now
           </span>
@@ -51,7 +51,7 @@ function Login() {
         </button>
 
         <p className='text-md'>
-          Don't have an account?
+          Don&apos;t have an account?
           <span className='cursor-pointer px-3 font-bold text-red-600 underline'>
             Register Now
           </span>

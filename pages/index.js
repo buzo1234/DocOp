@@ -39,7 +39,7 @@ export default function Home() {
             </Link>
 
             <p className='text-md'>
-              Don't have an account?
+              Don&apos;t have an account?
               <Link href='/register'>
                 <span className='cursor-pointer px-3 font-bold text-red-600 underline'>
                   Register Now
