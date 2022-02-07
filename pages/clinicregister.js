@@ -115,7 +115,9 @@ function Clinicregister() {
     };
     console.log('db post entered');
     const docRef = await addDoc(collection(db, 'clinics'), clinic_details);
-    router.push('/');
+
+    const data_id = docRef.id;
+    router.push(`/clinic/${data_id}`);
   };
   const handleChange = (val) => setOtp(val);
 
