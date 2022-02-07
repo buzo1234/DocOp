@@ -59,6 +59,7 @@ function Clinicregister() {
         console.log('msg sent');
         window.confirmationResult = confirmationResult;
         setStatus(true);
+        window.scrollTo(0, 0);
         // ...
       })
       .catch((error) => {
