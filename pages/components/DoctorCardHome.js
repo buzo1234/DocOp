@@ -32,7 +32,7 @@ const DoctorCardHome = ({ cid, user }) => {
     } else {
       console.log('loading');
     }
-  }, []);
+  }, [cid]);
 
   async function confirmRouter() {
     console.log('entered');
@@ -99,6 +99,7 @@ const DoctorCardHome = ({ cid, user }) => {
                 <div className='flex'>
                   <div className='flex w-full space-x-2'>
                     <Image
+                      alt='image'
                       src={doc.data().profile}
                       width='380'
                       height='380'

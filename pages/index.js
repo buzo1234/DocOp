@@ -122,7 +122,7 @@ export default function Home() {
 
             <p className='text-md'>
               Don&apos;t have an account?
-              <Link href='/register'>
+              <Link href='/register' passHref>
                 <span className='cursor-pointer px-3 font-bold text-red-600 text-lg underline'>
                   Register Now
                 </span>
@@ -132,6 +132,7 @@ export default function Home() {
         </div>
         <div className='mx-auto hidden flex-col items-center lg:col-span-1 lg:block'>
           <Image
+            alt='logo'
             src='/doctor-appointment-development.png'
             width={500}
             height={500}

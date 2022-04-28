@@ -50,7 +50,7 @@ function Clinic() {
         }
       );
     }
-  }, [router]);
+  }, [router, clinicid]);
 
   useEffect(() => {
     if (submit) {

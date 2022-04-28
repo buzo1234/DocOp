@@ -15,13 +15,13 @@ export default function Register() {
       <div className='grid w-full grid-cols-2 justify-center bg-bgg/80 py-10'>
         <div className='col-span-2 w-full flex-col justify-center lg:col-span-1  items-center space-x-5'>
           <div className='flex flex-col justify-center h-full items-center space-y-16'>
-            <Link href='/clinicregister'>
+            <Link href='/clinicregister' passHref>
               <div className=' w-3/5 cursor-pointer  rounded-full bg-black  px-5 py-5 text-center text-2xl text-white shadow-lg'>
                 Register as a Clinic
               </div>
             </Link>
-            <Link href='/patientregister'>
-              <div className=' w-3/5 cursor-pointer  rounded-full bg-black px-5 py-5 text-center text-2xl text-white shadow-lg'>
+            <Link href='/patientregister' passHref>
+              <div className=' w-3/5 cursor-pointer  rounded-full bg-black px-5 py-5   text-center text-2xl text-white shadow-lg'>
                 Register as a Patient
               </div>
             </Link>
@@ -29,6 +29,7 @@ export default function Register() {
         </div>
         <div className='mx-auto hidden flex-col items-center lg:col-span-1 lg:block'>
           <Image
+            alt='logo'
             src='/doctor-appointment-development.png'
             width={500}
             height={500}

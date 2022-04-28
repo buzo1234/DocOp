@@ -213,7 +213,7 @@ function Clinicregister() {
 
                 <p className='text-md'>
                   Already have an account?
-                  <Link href='/'>
+                  <Link href='/' passHref>
                     <span className='cursor-pointer px-3 font-bold text-red-600 text-lg underline'>
                       SignIn
                     </span>
@@ -260,6 +260,7 @@ function Clinicregister() {
         </div>
         <div className='mx-auto hidden flex-col items-center justify-center lg:col-span-1 lg:flex'>
           <Image
+            alt='logo'
             src='/doctor-appointment-development.png'
             width={500}
             height={500}

@@ -38,7 +38,7 @@ function Clinic() {
         }
       );
     }
-  }, [router]);
+  }, [router, patientid]);
   /*
   useEffect(() => {
     if (submit) {

@@ -68,6 +68,7 @@ const AddDForm = ({ setview, setFormData, setsent, cid }) => {
     <div className='flex flex-col w-full items-center justify-center'>
       <div className='flex w-full justify-center m-5'>
         <Image
+          alt='profilepicture'
           src={purl}
           width={200}
           height={200}

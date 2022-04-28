@@ -220,7 +220,7 @@ function Patientregister() {
 
                 <p className='text-md'>
                   Already have an account?
-                  <Link href='/'>
+                  <Link href='/' passHref>
                     <span className='cursor-pointer px-3 font-bold text-lg text-red-600 underline'>
                       SignIn
                     </span>
@@ -267,6 +267,7 @@ function Patientregister() {
         </div>
         <div className='mx-auto hidden h-full w-full items-center justify-center lg:col-span-1 lg:flex'>
           <Image
+            alt='logo'
             src='/doctor-appointment-development.png'
             width={500}
             height={500}

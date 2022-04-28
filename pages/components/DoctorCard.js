@@ -19,6 +19,7 @@ const DoctorCard = ({
       {/* Image with Name, Gender, Specialities, working days, average patient time */}
       <div className='col-span-2'>
         <Image
+          alt='doctor'
           src={img}
           width={150}
           height={150}
