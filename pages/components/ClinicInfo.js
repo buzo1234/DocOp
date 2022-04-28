@@ -15,4 +15,4 @@ function ClinicInfo({ name, address }) {
   );
 }
 
-export default CinicInfo;
+export default ClinicInfo;

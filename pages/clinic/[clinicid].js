@@ -74,7 +74,6 @@ function Clinic() {
       <div>
         <Header />
       </div>
-
       {/* {clinicdata.map((clinic) => (
         <ul key={clinic.id}>
           <li>Clinic id : {clinic.id}</li>
