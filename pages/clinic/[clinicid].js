@@ -11,8 +11,8 @@ import {
   orderBy,
 } from '@firebase/firestore';
 import Header from '../components/Header';
-import { ClinicInfo } from '../components/ClinicInfo';
-import { DoctorList } from '../components/DoctorList';
+import ClinicInfo from '../components/ClinicInfo';
+import DoctorList from '../components/DoctorList';
 import AddDForm from '../components/AddDForm';
 
 function Clinic() {
