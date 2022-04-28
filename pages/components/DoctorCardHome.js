@@ -34,38 +34,40 @@ const DoctorCardHome = ({ cid, user }) => {
     }
   }, [cid]);
 
-  async function confirmRouter() {
-    console.log('entered');
-    console.log(confirm);
-    if (confirm.docid !== undefined && confirm.startTime !== undefined) {
-      const booking_details = {
-        userId: user.id,
-        patient: user.data().patientname,
-        clinicId: cid,
-        docId: confirm.docid,
-        slot: confirm.startTime,
-        timestamp: serverTimestamp(),
-      };
-      console.log(booking_details);
-      const docRef = await addDoc(collection(db, 'bookings'), booking_details);
-      alert(`Booking added with id ${docRef.id}`);
-
-      const updateRef = doc(db, 'doctors', confirm.docid);
-      try {
-        await updateDoc(updateRef, {
-          slots: arrayRemove({ start: confirm.startTime, status: false }),
-        });
-        await updateDoc(updateRef, {
-          slots: arrayUnion({ start: confirm.startTime, status: true }),
-        });
-      } catch (err) {
-        alert(err);
-      }
-    }
-  }
-
   useEffect(() => {
     if (confirm.doc !== '' && confirm.startTime !== '') {
+      async function confirmRouter() {
+        console.log('entered');
+        console.log(confirm);
+        if (confirm.docid !== undefined && confirm.startTime !== undefined) {
+          const booking_details = {
+            userId: user.id,
+            patient: user.data().patientname,
+            clinicId: cid,
+            docId: confirm.docid,
+            slot: confirm.startTime,
+            timestamp: serverTimestamp(),
+          };
+          console.log(booking_details);
+          const docRef = await addDoc(
+            collection(db, 'bookings'),
+            booking_details
+          );
+          alert(`Booking added with id ${docRef.id}`);
+
+          const updateRef = doc(db, 'doctors', confirm.docid);
+          try {
+            await updateDoc(updateRef, {
+              slots: arrayRemove({ start: confirm.startTime, status: false }),
+            });
+            await updateDoc(updateRef, {
+              slots: arrayUnion({ start: confirm.startTime, status: true }),
+            });
+          } catch (err) {
+            alert(err);
+          }
+        }
+      }
       confirmRouter();
     }
   }, [confirm]);

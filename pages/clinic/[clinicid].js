@@ -54,6 +54,12 @@ function Clinic() {
 
   useEffect(() => {
     if (submit) {
+      const addNewDoctor = async () => {
+        const docRef = await addDoc(collection(db, 'doctors'), data);
+        const data_id = docRef.id;
+        alert('Doctor added with id: ' + data_id);
+      };
+
       addNewDoctor();
       setSubmit(false);
       setSee(false);
@@ -61,12 +67,6 @@ function Clinic() {
   }, [submit]);
 
   console.log(docdata);
-
-  const addNewDoctor = async () => {
-    const docRef = await addDoc(collection(db, 'doctors'), data);
-    const data_id = docRef.id;
-    alert('Doctor added with id: ' + data_id);
-  };
 
   return (
     <div>
