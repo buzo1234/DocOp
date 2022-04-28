@@ -32,16 +32,22 @@ const DoctorCard = ({
         <p>Average Patient Time : {average} hrs</p>
         <p className='font-semibold'>Specialities</p>
         <div className='flex space-x-2 space-y-1'>
-          {special.map((quality) => (
-            <p className='px-2 py-1 bg-bgg rounded-lg text-white text-lg'>
+          {special.map((quality, index) => (
+            <p
+              key={quality + index}
+              className='px-2 py-1 bg-bgg rounded-lg text-white text-lg'
+            >
               {quality}
             </p>
           ))}
         </div>
         <p className='font-semibold'>Working Days</p>
         <div className='flex space-x-2 space-y-1'>
-          {days.map((day) => (
-            <p className='px-2 py-1 bg-black text-white rounded-lg'>
+          {days.map((day, index) => (
+            <p
+              key={day + index}
+              className='px-2 py-1 bg-black text-white rounded-lg'
+            >
               {day.name}
             </p>
           ))}
@@ -50,8 +56,9 @@ const DoctorCard = ({
       <p className='font-semibold'>Slots</p>
       <div className='flex col-span-8 w-full overscroll-x-none space-x-1  justify-center'>
         <div className='grid grid-cols-8 w-full gap-1 grid-rows-1'>
-          {slots.map((slot) => (
+          {slots.map((slot, index) => (
             <div
+              key={slot + index}
               className={
                 slot.status
                   ? 'col-span-1 px-2 py-1 justify-center overscroll-hidden flex font-semibold border-[1.5px] border-red-600 mx-1 my-1 bg-red-200 text-black rounded-lg w-full'

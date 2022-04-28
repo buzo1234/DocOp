@@ -111,8 +111,11 @@ const DoctorCardHome = ({ cid, user }) => {
                         Specialities:
                       </p>
                       <div className='flex flex-wrap'>
-                        {doc.data().speciality.map((special) => (
-                          <p className='bg-black text-white px-1 py-1 mx-1 my-1 rounded-lg text-sm'>
+                        {doc.data().speciality.map((special, index) => (
+                          <p
+                            key={special + index}
+                            className='bg-black text-white px-1 py-1 mx-1 my-1 rounded-lg text-sm'
+                          >
                             {special}
                           </p>
                         ))}
@@ -122,8 +125,11 @@ const DoctorCardHome = ({ cid, user }) => {
                       </p>
 
                       <div className='flex flex-wrap'>
-                        {doc.data().working.map((day) => (
-                          <p className=' px-1  rounded-lg text-sm'>
+                        {doc.data().working.map((day, index) => (
+                          <p
+                            key={day + index}
+                            className=' px-1  rounded-lg text-sm'
+                          >
                             {day.name},
                           </p>
                         ))}
@@ -142,6 +148,7 @@ const DoctorCardHome = ({ cid, user }) => {
                   <div className='flex w-full overflow-x-auto  '>
                     {doc.data().slots.map((slot, index) => (
                       <div
+                        key={slot + index}
                         className={
                           slot.status
                             ? 'flex shrink-0 px-2 py-1 rounded-lg w-fit mx-1  my-1 bg-red-300'
