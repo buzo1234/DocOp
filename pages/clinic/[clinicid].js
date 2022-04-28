@@ -64,7 +64,7 @@ function Clinic() {
       setSubmit(false);
       setSee(false);
     }
-  }, [submit]);
+  }, [submit, data]);
 
   console.log(docdata);
 

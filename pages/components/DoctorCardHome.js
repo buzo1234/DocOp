@@ -70,7 +70,7 @@ const DoctorCardHome = ({ cid, user }) => {
       }
       confirmRouter();
     }
-  }, [confirm]);
+  }, [confirm, cid, user]);
 
   const addSlot = (a, index, b, c) => {
     let booking = { docid: a, indexId: index, slotStart: b };
