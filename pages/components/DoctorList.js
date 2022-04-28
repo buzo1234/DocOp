@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import DoctorCard from './DoctorCard';
 
-export const DoctorList = ({ docdata, bookdata }) => {
+export default DoctorList = ({ docdata, bookdata }) => {
   return (
     <div>
       {/* Doctor Card */}

@@ -1,7 +1,7 @@
 import React from 'react';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
-export const ClinicInfo = ({ name, address }) => {
+export default ClinicInfo = ({ name, address }) => {
   return (
     <div className='flex w-full z-20 bg-white justify-between sticky top-0 items-center p-2 border-b-[1.5px] border-gray-300 '>
       <div className='text-2xl font-semibold flex w-full px-7 '>{name}</div>
