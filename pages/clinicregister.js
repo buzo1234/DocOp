@@ -117,6 +117,7 @@ function Clinicregister() {
     const docRef = await addDoc(collection(db, 'clinics'), clinic_details);
 
     const data_id = docRef.id;
+    localStorage.setItem('UserId', data_id);
     router.push(`/clinic/${data_id}`);
   };
   const handleChange = (val) => setOtp(val);
@@ -137,16 +138,13 @@ function Clinicregister() {
             }`}
       </style>
 
-      <Header />
-      <div className='grid grid-cols-2 justify-center'>
-        <div
-          className='col-span-2 flex justify-center lg:col-span-1 '
-          style={{ backgroundColor: '#a6e7ff' }}
-        >
+      <Header reg={true} />
+      <div className='grid grid-cols-2 justify-center bg-bgg/80'>
+        <div className='col-span-2 flex justify-center lg:col-span-1 '>
           {!status ? (
             <>
-              <div className=' flex w-full flex-col items-center rounded-md p-5 shadow-md'>
-                <p className='m-6 p-5 text-center font-sans text-4xl font-bold'>
+              <div className=' flex w-full flex-col items-center rounded-md p-5'>
+                <p className='m-6 p-5 text-center font-sans text-5xl font-bold'>
                   Register as a Clinic
                 </p>
                 <form
@@ -206,7 +204,7 @@ function Clinicregister() {
                     required
                   />
                   <button
-                    className=' mb-10 mt-10  w-4/5 lg:w-2/5 rounded-full bg-black px-6 py-2 text-white text-center flex justify-center'
+                    className=' mb-10 mt-10  w-4/5 lg:w-2/5 rounded-full bg-black px-6 py-2 text-white text-xl text-center flex justify-center'
                     type='submit'
                   >
                     Proceed to OTP Verfication
@@ -216,7 +214,7 @@ function Clinicregister() {
                 <p className='text-md'>
                   Already have an account?
                   <Link href='/'>
-                    <span className='cursor-pointer px-3 font-bold text-red-600 underline'>
+                    <span className='cursor-pointer px-3 font-bold text-red-600 text-lg underline'>
                       SignIn
                     </span>
                   </Link>
@@ -260,9 +258,9 @@ function Clinicregister() {
             </>
           )}
         </div>
-        <div className='mx-auto hidden flex-col items-center lg:col-span-1 lg:block'>
+        <div className='mx-auto hidden flex-col items-center justify-center lg:col-span-1 lg:flex'>
           <Image
-            src='/doctor.jfif'
+            src='/doctor-appointment-development.png'
             width={500}
             height={500}
             objectFit='contain'

@@ -78,6 +78,7 @@ function Patientregister() {
         const user = result.user;
         // ...
         console.log('Correct');
+
         alert('Verified');
         confirmRouter();
         console.log('db inserted');
@@ -115,7 +116,9 @@ function Patientregister() {
     };
     console.log('db post entered');
     const docRef = await addDoc(collection(db, 'patients'), patient_details);
-    router.push('/');
+    const data_id = docRef.id;
+    localStorage.setItem('UserId', data_id);
+    router.push(`/patient/${data_id}`);
   };
   const handleChange = (val) => setOtp(val);
 
@@ -135,16 +138,13 @@ function Patientregister() {
             }`}
       </style>
 
-      <Header />
-      <div className='grid grid-cols-2 justify-center'>
-        <div
-          className='col-span-2 flex justify-center lg:col-span-1 '
-          style={{ backgroundColor: '#a6e7ff' }}
-        >
+      <Header reg={true} />
+      <div className='grid grid-cols-2 justify-center bg-bgg/80'>
+        <div className='col-span-2 flex justify-center lg:col-span-1 '>
           {!status ? (
             <>
-              <div className=' flex w-full flex-col items-center rounded-md p-5 shadow-md'>
-                <p className='m-6 p-5 text-center font-sans text-4xl font-bold'>
+              <div className=' flex w-full flex-col items-center rounded-md p-5 '>
+                <p className='m-6 p-5 text-center font-sans text-5xl font-bold'>
                   Register as a Patient
                 </p>
                 <form
@@ -211,7 +211,7 @@ function Patientregister() {
                     required
                   />
                   <button
-                    className=' mb-10 mt-10  w-4/5 lg:w-2/5 rounded-full bg-black px-6 py-2 text-white text-center flex justify-center'
+                    className=' mb-10 mt-10  w-4/5 lg:w-2/5 rounded-full bg-black px-6 py-2 text-white text-center text-xl flex justify-center'
                     type='submit'
                   >
                     Proceed to OTP Verfication
@@ -221,7 +221,7 @@ function Patientregister() {
                 <p className='text-md'>
                   Already have an account?
                   <Link href='/'>
-                    <span className='cursor-pointer px-3 font-bold text-red-600 underline'>
+                    <span className='cursor-pointer px-3 font-bold text-lg text-red-600 underline'>
                       SignIn
                     </span>
                   </Link>
@@ -265,9 +265,9 @@ function Patientregister() {
             </>
           )}
         </div>
-        <div className='mx-auto hidden flex-col items-center lg:col-span-1 lg:block'>
+        <div className='mx-auto hidden h-full w-full items-center justify-center lg:col-span-1 lg:flex'>
           <Image
-            src='/doctor.jfif'
+            src='/doctor-appointment-development.png'
             width={500}
             height={500}
             objectFit='contain'
