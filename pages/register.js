@@ -12,7 +12,7 @@ export default function Register() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Header />
-      <div className='grid w-full grid-cols-2 justify-center bg-bgg/80 py-10'>
+      <div className='grid w-full grid-cols-2 justify-center bg-bgg/80 py-10 h-full'>
         <div className='col-span-2 w-full flex-col justify-center lg:col-span-1  items-center space-x-5'>
           <div className='flex flex-col justify-center h-full items-center space-y-16'>
             <Link href='/clinicregister' passHref>

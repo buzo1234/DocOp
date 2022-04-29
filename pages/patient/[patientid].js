@@ -13,6 +13,7 @@ import {
 import Header from '../components/Header';
 import SearchIcon from '@mui/icons-material/Search';
 import ClinicDisplay from '../components/ClinicDisplay';
+import SearchResults from '../components/SearchResults';
 
 function Clinic() {
   const router = useRouter();
@@ -20,6 +21,7 @@ function Clinic() {
   const [patientdata, setPatientdata] = useState([]);
   const [search, setSearch] = useState('');
   const [clinicdata, setClinicData] = useState([]);
+  const [doctordata, setDoctorData] = useState([]);
 
   useEffect(() => {
     if (patientid) {
@@ -37,8 +39,15 @@ function Clinic() {
           setClinicData(snapshot.docs);
         }
       );
+      onSnapshot(
+        query(collection(db, 'doctors')),
+        orderBy('timestamp'),
+        (snapshot) => {
+          setDoctorData(snapshot.docs);
+        }
+      );
     }
-  }, [router, patientid]);
+  }, [router]);
   /*
   useEffect(() => {
     if (submit) {
@@ -91,6 +100,14 @@ function Clinic() {
                 <SearchIcon className='cursor-pointer' />
               </div>
             </div>
+          </div>
+          <div>
+            {/* Search Results */}
+            <SearchResults
+              docdata={doctordata}
+              val={search}
+              user={patientdata[0]}
+            />
           </div>
           <div className='w-full mt-5 px-7'>
             <p className='px-3 font-bold text-2xl mb-3'>Clinics near you</p>
